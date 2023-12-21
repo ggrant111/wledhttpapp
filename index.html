@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WLED Control Panel</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="wledForm" class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-server"></i></span>
+          </div>
+          <input
+            type="text"
+            id="ipAddress"
+            name="ipAddress"
+            value="10.0.0.205"
+            class="form-control"
+            placeholder="Device IP Address"
+          />
+        </div>
+
+        <!-- <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="bi bi-brightness-high"> Brightness</i></span
+            >
+          </div>
+          <input
+            type="range"
+            id="brightness"
+            name="brightness"
+            min="0"
+            max="255"
+            class="form-control-range"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="bi bi-palette"> Primary Color</i></span
+            >
+          </div>
+          <input type="color" id="color" name="color" class="form-control" />
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="bi bi-speedometer"> Effect Speed</i></span
+            >
+          </div>
+          <input
+            type="range"
+            id="speed"
+            name="speed"
+            min="0"
+            max="255"
+            value="0"
+            class="form-control-range"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="bi bi-lightning-charge"> Effect Intensity</i></span
+            >
+          </div>
+          <input
+            type="range"
+            id="intensity"
+            name="intensity"
+            min="0"
+            max="255"
+            value="0"
+            class="form-control-range"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Device</button> -->
+      </form>
+
+      <!-- <div id="httpRequestDisplay" class="alert alert-info"></div> -->
+      Current Live View
+      <div>
+        <div id="liveViewContainer">
+          <iframe
+            id="liveViewFrame"
+            src="http://10.0.0.205/liveview"
+            width="100%"
+            height="600px"
+            frameborder="0"
+          >
+            Your browser does not support iframes.
+          </iframe>
+        </div>
+      </div>
+      <div id="effectControls" class="text-center">
+        <div>
+          <p>Brightness</p>
+          <button id="decreaseBrightness" class="btn btn-primary">
+            <i class="bi bi-dash"></i>
+          </button>
+          <button id="pauseBrightness" class="btn btn-primary">
+            <i class="bi bi-power"></i>
+          </button>
+          <button id="increaseBrightness" class="btn btn-primary">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+        <p>Effect</p>
+        <button id="prevEffect" class="btn btn-primary">
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button id="randomEffect" class="btn btn-primary">
+          <i class="bi bi-shuffle"></i>
+        </button>
+        <button id="nextEffect" class="btn btn-primary">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+        
+        <div>
+          <p>Effect Speed</p>
+          <button id="decreaseEffectSpeed" class="btn btn-primary">
+            <i class="bi bi-dash"></i>
+          </button>
+          <button id="pauseEffectSpeed" class="btn btn-primary">
+            <i class="bi bi-pause"></i>
+          </button>
+          <button id="increaseEffectSpeed" class="btn btn-primary">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+        <div>
+          <p>Intensity</p>
+          <button id="decreaseIntensity" class="btn btn-primary">
+            <i class="bi bi-dash"></i>
+          </button>
+          <button id="pauseIntensity" class="btn btn-primary">
+            <i class="bi bi-pause"></i>
+          </button>
+          <button id="increaseIntensity" class="btn btn-primary">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+        <div>
+          <p>Color palette</p>
+          <button id="prevpalette" class="btn btn-primary">
+            <i class="bi bi-dash"></i>
+          </button>
+          <button id="randompalette" class="btn btn-primary">
+            <i class="bi bi-shuffle"></i>
+          </button>
+          <button id="nextpalette" class="btn btn-primary">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Place this where you want the device state to appear -->
+      <div id="deviceState" class="device-state">
+        <!-- Device state will be displayed here -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

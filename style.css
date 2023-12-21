@@ -1,0 +1,71 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.form-group {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#effectControls .btn-primary {
+    font-size: 2rem;
+    color: #333;
+    background-color: transparent;
+    border: none;
+}
+
+#effectControls {
+    text-align: center;
+    padding: 10px;
+}
+
+#effectControls .btn {
+    margin: 0 5px;
+}
+
+#currentEffect {
+    margin-top: 10px;
+}
+
+.device-state {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-group mb-3 {
+    margin-bottom: 15px;
+}
+
+input[type=range] {
+    width: 100%; /* Ensures sliders take the full width */
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+/* Add any additional custom styles as needed */
+#liveViewContainer {
+    width: 100%; /* or any specific width you prefer */
+    height: 25px; /* Set the height to 15px */
+    border: 1px solid #ccc; /* Optional: adds a border around the iframe */
+    overflow: hidden; /* Ensures no scrollbars are shown around the iframe */
+}
+
+#liveViewFrame {
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    margin-bottom: 0;
+}
